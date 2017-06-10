@@ -1,0 +1,26 @@
+<md-card>
+<form [formGroup]="addNoticeForm" (ngSubmit)="addNoticeClickHandler(addNoticeForm.value)">
+  <md-input-container class="input-full-width">
+    <input formControlName="title" mdInput placeholder="Title" required>
+
+  </md-input-container>
+  <md-error *ngIf="!addNoticeForm.controls['title'].valid && (addNoticeForm.controls['title'].touched)">Title is required and must be between 3-42 characters.</md-error>
+  <br>
+  <md-input-container>
+    <input formControlName="author" mdInput placeholder="Author" required>
+  </md-input-container>
+  <md-error *ngIf="!addNoticeForm.controls['author'].valid && ( addNoticeForm.controls['author'].touched )">Author name is required and must be between 2-42 characters.</md-error>
+
+  <br>
+
+  <md-input-container class="input-full-width" >
+    <textarea formControlName="desc" mdInput placeholder="Description" required></textarea>
+  </md-input-container>
+  <md-error *ngIf="!addNoticeForm.controls['desc'].valid && (addNoticeForm.controls['desc'].touched )">Description is required and must be between 30-500 characters.</md-error>
+
+  <br>
+  <button type="submit" [disabled]="!addNoticeForm.valid" md-raised-button color="accent">Add notice</button>
+</form>
+
+
+</md-card>
