@@ -8,7 +8,7 @@ import { NoticeService } from '../notice.service';
 })
 export class NoticeDisplayComponent implements OnInit {
 
-  constructor(private noticeService : NoticeService) { }
+  constructor(public noticeService : NoticeService) { }
 
   ngOnInit() {
   }
